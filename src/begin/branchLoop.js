@@ -35,5 +35,15 @@ do{
 
 console.log("Your Roll is "+roll);
 
+// For Loop
+for (var i=0;i<=5;i++){
+  console.log(i);
+}
+
+var ary = [1,2,"arun","mohan"];
+
+for (var i=0;i<ary.length;i++){
+  console.log(ary[i]);
+}
 
 console.log("End");
