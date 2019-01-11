@@ -1,3 +1,4 @@
+
 var myFirstObject = {
 size:4,
 value:'arun',
@@ -6,7 +7,9 @@ print: function(){
 }
 };
 
-console.log(myFirstObject);
+/*console.log(myFirstObject);
 console.log(myFirstObject.size)
 console.log(myFirstObject.value)
-myFirstObject.print();
+myFirstObject.print();*/
+
+exports.myFirstObject = myFirstObject;
