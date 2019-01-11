@@ -8,6 +8,7 @@ app.get("/",function(req,res){
 });
 
 app.get("/grade",function(req,res){
+  book.reset();
   var grades = req.query.grades.split(",");
   for (var i=0;i<grades.length;i++){
     book.addGrade(parseInt(grades[i]));
@@ -16,13 +17,9 @@ app.get("/grade",function(req,res){
   var message="<!DOCTYPE html>"
   message+="<html><title>arun</title><body><table><h2>Grading System</h2>";
   message+="<table>";
-  message+="<tr><th>Count</th><th>Average</th><th>Grade</th></tr>"
-  message+="<tr><td>"+book.getGradeCount()+"</td><td>"+book.getAverageGrade()+ "</td><td>" + book.getLetterGrade() + "</td></tr>"
-  /*message+="</table>";
-  message+="Number of Grade = "+ book.getGradeCount();
-  message+="\nAverage Grade = " + book.getAverageGrade();
-  message+="\nLetterGrade = "+ book.getLetterGrade();*/
-  message+="</table></body></html>"
+  message+="<tr><th>Count</th><th>Average</th><th>Grade</th></tr>";
+  message+="<tr><td>"+book.getGradeCount()+"</td><td>"+book.getAverageGrade()+ "</td><td>" + book.getLetterGrade() + "</td></tr>";
+  message+="</table></body></html>";
   res.send(message);
 });
 
